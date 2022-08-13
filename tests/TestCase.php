@@ -2,9 +2,9 @@
 
 namespace Finller\Address\Tests;
 
+use Finller\Address\AddressServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Finller\Address\AddressServiceProvider;
 
 class TestCase extends Orchestra
 {

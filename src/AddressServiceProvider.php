@@ -2,6 +2,7 @@
 
 namespace Finller\Address;
 
+use Finller\Address\Commands\AddressCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
