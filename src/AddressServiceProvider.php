@@ -20,6 +20,6 @@ class AddressServiceProvider extends PackageServiceProvider
             // ->hasConfigFile()
             // ->hasViews()
             ->hasMigration('create_addresses_table');
-            // ->hasCommand(AddressCommand::class);
+        // ->hasCommand(AddressCommand::class);
     }
 }
