@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property ?string $state
  * @property ?string $city
  * @property ?string $postal_code
+ * @property ?array<int, mixed> $boundaries
  */
 class Address extends Model
 {
@@ -25,13 +26,14 @@ class Address extends Model
         'first_name',
         'last_name',
         'organization',
-        'country_code',
+        'country',
         'street',
         'state',
         'city',
         'postal_code',
         'latitude',
         'longitude',
+        'boundaries',
         'is_primary',
         'is_billing',
         'is_shipping',
@@ -44,6 +46,7 @@ class Address extends Model
         'is_billing' => 'boolean',
         'is_shipping' => 'boolean',
         'deleted_at' => 'datetime',
+        'boundaries' => 'array',
     ];
 
     public function addressable(): MorphTo
@@ -53,6 +56,6 @@ class Address extends Model
 
     public function __toString()
     {
-        return $this->street.' '.$this->postal_code.' '.$this->city;
+        return $this->street . ' ' . $this->postal_code . ' ' . $this->city;
     }
 }

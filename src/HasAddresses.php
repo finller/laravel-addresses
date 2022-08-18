@@ -2,25 +2,26 @@
 
 namespace Finller\Address;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 /**
- * @property ?Address $addresses
+ * @property ?Collection<int,Address> $addresses
  */
-trait Addressable
+trait HasAddresses
 {
     /**
      * Auto delete address on parent deletion
      */
-    protected static function bootedAddressable()
+    protected static function bootedHasAddresses()
     {
         static::deleting(function (Model $model) {
-            $model->address()->delete(); // @phpstan-ignore-line
+            $model->addresses()->delete(); // @phpstan-ignore-line
         });
     }
 
-    public function address(): MorphOne
+    public function addresses(): MorphOne
     {
         return $this->morphMany(Address::class, 'addressable');
     }
