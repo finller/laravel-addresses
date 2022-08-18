@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property ?string $city
  * @property ?string $postal_code
  * @property ?array<int, mixed> $boundaries
+ * @property ?string $type
  */
 class Address extends Model
 {
@@ -37,6 +38,7 @@ class Address extends Model
         'is_primary',
         'is_billing',
         'is_shipping',
+        'type',
     ];
 
     protected $casts = [
