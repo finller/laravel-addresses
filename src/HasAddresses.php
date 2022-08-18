@@ -29,11 +29,11 @@ trait HasAddresses
 
     public function latestAddress(): MorphOne
     {
-        return $this->morphOne(Address::class)->latestOfMany();
+        return $this->morphOne(Address::class, 'addressable')->latestOfMany();
     }
 
     public function oldestMessage(): MorphOne
     {
-        return $this->morphOne(Address::class)->oldestOfMany();
+        return $this->morphOne(Address::class, 'addressable')->oldestOfMany();
     }
 }
