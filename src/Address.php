@@ -56,6 +56,6 @@ class Address extends Model
 
     public function __toString()
     {
-        return $this->street . ' ' . $this->postal_code . ' ' . $this->city;
+        return $this->street.' '.$this->postal_code.' '.$this->city;
     }
 }
