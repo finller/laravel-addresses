@@ -4,6 +4,7 @@ namespace Finller\Address;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 /**
@@ -21,8 +22,18 @@ trait HasAddresses
         });
     }
 
-    public function addresses(): MorphOne
+    public function addresses(): MorphMany
     {
         return $this->morphMany(Address::class, 'addressable');
+    }
+
+    public function latestAddress(): MorphOne
+    {
+        return $this->morphOne(Address::class)->latestOfMany();
+    }
+
+    public function oldestMessage(): MorphOne
+    {
+        return $this->morphOne(Address::class)->oldestOfMany();
     }
 }
