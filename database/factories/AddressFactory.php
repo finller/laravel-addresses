@@ -18,7 +18,7 @@ class AddressFactory extends Factory
             'organization' => fake()->company(),
             'country' => fake()->countryCode(),
             'street' => fake()->streetAddress(),
-            'state' => "state",
+            'state' => 'state',
             'city' => fake()->city(),
             'postal_code' => fake()->postcode(),
             'latitude' => fake()->latitude(),
