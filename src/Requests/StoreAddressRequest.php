@@ -24,22 +24,22 @@ class StoreAddressRequest extends FormRequest
     public function rules()
     {
         return [
-            "label" => ["string", "nullable"],
-            "first_name" => ["string", "nullable"],
-            "last_name" => ["string", "nullable"],
-            "organization" => ["string", "nullable"],
-            "country" => ["string", "nullable", "min:2", "max:2"],
-            "street" => ["string", "nullable"],
-            "state" => ["string", "nullable"],
-            "city" => ["string", "nullable"],
-            "postal_code" => ["string", "nullable"],
-            "latitude" => ["numeric", "nullable"],
-            "longitude" => ["numeric", "nullable"],
-            "boundaries" => ["array", "nullable"],
-            "is_primary" => ["boolean", "sometimes"],
-            "is_billing" => ["boolean", "sometimes"],
-            "is_shipping" => ["boolean", "sometimes"],
-            "type" => ["boolean", "nullable"],
+            'label' => ['string', 'nullable'],
+            'first_name' => ['string', 'nullable'],
+            'last_name' => ['string', 'nullable'],
+            'organization' => ['string', 'nullable'],
+            'country' => ['string', 'nullable', 'min:2', 'max:2'],
+            'street' => ['string', 'nullable'],
+            'state' => ['string', 'nullable'],
+            'city' => ['string', 'nullable'],
+            'postal_code' => ['string', 'nullable'],
+            'latitude' => ['numeric', 'nullable'],
+            'longitude' => ['numeric', 'nullable'],
+            'boundaries' => ['array', 'nullable'],
+            'is_primary' => ['boolean', 'sometimes'],
+            'is_billing' => ['boolean', 'sometimes'],
+            'is_shipping' => ['boolean', 'sometimes'],
+            'type' => ['boolean', 'nullable'],
         ];
     }
 }
