@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 /**
  * @property ?Model $addressable
- * @property ?string $country_code
+ * @property ?string $country
  * @property ?string $street
  * @property ?string $state
  * @property ?string $city
