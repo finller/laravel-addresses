@@ -23,7 +23,7 @@ class AddressFactory extends Factory
             'postal_code' => fake()->postcode(),
             'latitude' => fake()->latitude(),
             'longitude' => fake()->longitude(),
-            'boundaries' => [fake()->latitude(), fake()->longitude(), fake()->latitude(), fake()->longitude()],
+            'boundaries' => [fake()->longitude(), fake()->latitude(), fake()->longitude(), fake()->latitude()],
             'is_primary' => fake()->boolean(),
             'is_billing' => fake()->boolean(),
             'is_shipping' => fake()->boolean(),
