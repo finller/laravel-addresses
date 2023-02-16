@@ -2,7 +2,6 @@
 
 namespace Finller\Address;
 
-use Finller\Address\Commands\AddressCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -17,9 +16,6 @@ class AddressServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-addresses')
-            // ->hasConfigFile()
-            // ->hasViews()
             ->hasMigration('create_addresses_table');
-        // ->hasCommand(AddressCommand::class);
     }
 }

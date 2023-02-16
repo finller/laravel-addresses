@@ -15,7 +15,7 @@ trait HasAddresses
     /**
      * Auto delete address on parent deletion
      */
-    protected static function bootedHasAddresses()
+    protected static function bootedHasAddresses(): void
     {
         static::deleting(function (Model $model) {
             $model->addresses()->delete(); // @phpstan-ignore-line
