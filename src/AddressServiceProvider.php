@@ -17,6 +17,7 @@ class AddressServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-addresses')
             ->hasMigration('create_addresses_table')
-            ->hasMigration('add_phone_number_column_to_addresses_table');
+            ->hasMigration('add_phone_number_column_to_addresses_table')
+            ->hasMigration('add_email_column_to_addresses_table');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Finller\Address;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Casts\ArrayObject;
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 /**
+ * @property int $id
  * @property ?int $addressable_id
  * @property ?string $addressable_type
  * @property ?Model $addressable
@@ -29,33 +31,16 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property bool $is_billing
  * @property bool $is_shipping
  * @property ?string $phone
+ * @property ?string $email
+ * @property Carbon $updated_at
+ * @property Carbon $created_at
  * @property ?ArrayObject $metadata
  */
 class Address extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'addressable_id',
-        'addressable_type',
-        'label',
-        'first_name',
-        'last_name',
-        'organization',
-        'country',
-        'street',
-        'state',
-        'city',
-        'postal_code',
-        'latitude',
-        'longitude',
-        'boundaries',
-        'is_primary',
-        'is_billing',
-        'is_shipping',
-        'type',
-        'phone',
-    ];
+    protected $guarded = [];
 
     protected $casts = [
         'latitude' => 'float',
@@ -75,6 +60,6 @@ class Address extends Model
 
     public function __toString()
     {
-        return $this->street.' '.$this->postal_code.' '.$this->city;
+        return collect([$this->street, $this->postal_code, $this->city, $this->state, $this->country])->filter()->join(' ');
     }
 }
